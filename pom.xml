@@ -32,7 +32,7 @@
         <jersey-guice.version>0.10</jersey-guice.version>
         <postgres.version>9.4.1212</postgres.version>
         <amqp-client.version>3.6.0</amqp-client.version>
-        <qpid-broker.version>0.28</qpid-broker.version>
+        <qpid-broker.version>6.0.3</qpid-broker.version>
         <guice.version>4.0</guice.version>
     </properties>
 
