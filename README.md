@@ -6,8 +6,8 @@ MicroSuite is a service oriented micro-service framework.
 ### Prerequisites
 
 * [PostgreSQL 9.5](http://www.postgresql.org/download/) and higher installed
-* In postgres create user `notification` with `changeit` password.
-* In postgres create database `notificationdb` owned by user `notification`
+* In postgres create user `postgres` with `postgres` password.
+* In postgres create database `servicedb` owned by user `postgres`
 
 ### Build
 
@@ -15,13 +15,8 @@ MicroSuite is a service oriented micro-service framework.
 mvn clean package
 ```
 
-### Create notification table
-```
-java -jar target/notification-svc-1.0.0.jar db migrate notification.yml
-```
-
 ### Run the server
 ```
-cd notification-svc
-java -jar target/notification-svc-1.0.0.jar  server notification.yml
+cd microSuite
+java -jar target/microSuite-1.0.0.jar  server service.yml
 ```
