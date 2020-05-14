@@ -1,0 +1,68 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9050
+
+  adminConnectors:
+    - type: http
+      port: 9051
+
+rabbitmq:
+  #cred's
+  host: "localhost"
+  port: 5671
+  virtualHost: "/"
+  username: "rabbit_user"
+  password: "microsuite"
+
+  #for consumer
+  consumeExchange: "propel.notification.exchange"
+  consumerThreadPoolSize: 5
+
+  #for publisher
+  publishExchange: "propel.ui.notification.exchange"
+  publishThreadPoolSize: 5
+
+# Logging settings.
+logging:
+  # The default level. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    com.hpe.propel.notification: DEBUG
+    io.dropwizard: DEBUG
+    javax.ws.rs.client: DEBUG
+  appenders:
+    - type: console
+      threshold: INFO
+      timeZone: UTC
+      target: stdout
+      logFormat: "%highlight(%-5level) [%-23date] %-10.10([%thread]) %cyan(%-43logger{42}) %msg %n"
+
+swagger:
+  resourcePackage: ServiceApi
+  title: MicroSuite Service
+  version: v1
+  description: REST API docs for MicroSuite Service.
+
+#database info
+database:
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: postgres
+  url: jdbc:postgresql://localhost:5432/servicedb
+  properties:
+    charSet: UTF-8
+  maxWaitForConnection: 1s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  checkConnectionOnBorrow: true
+  evictionInterval: 10s
+  minIdleTime: 1 minute
+
+flyway:
+  encoding: UTF-8
+  locations:
+    - db/migration
