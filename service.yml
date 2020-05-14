@@ -16,11 +16,11 @@ rabbitmq:
   password: "microsuite"
 
   #for consumer
-  consumeExchange: "propel.notification.exchange"
+  consumeExchange: "microsuite.service.exchange"
   consumerThreadPoolSize: 5
 
   #for publisher
-  publishExchange: "propel.ui.notification.exchange"
+  publishExchange: "microsuite.ui.service.exchange"
   publishThreadPoolSize: 5
 
 # Logging settings.

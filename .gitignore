@@ -16,3 +16,4 @@ target
 microSuite.properties
 *.ear
 *.iml
+dependency-reduced-pom.xml
