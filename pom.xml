@@ -35,7 +35,7 @@
         <qpid-broker.version>6.0.3</qpid-broker.version>
         <guice.version>4.0</guice.version>
         <jacoco.version>0.7.4.201502262128</jacoco.version>
-        <jetty.version>9.4.0.RC3</jetty.version>
+        <jetty.version>9.4.41.v20210516</jetty.version>
     </properties>
 
     <scm>
